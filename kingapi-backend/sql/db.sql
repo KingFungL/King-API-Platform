@@ -6,6 +6,7 @@ create table if not exists kingapi.`interface_info`
     `name` varchar(256) not null comment '用户名',
     `description` varchar(256) null comment '描述',
     `url` varchar(512) not null comment '接口地址',
+    `requestParams` text not null comment '请求参数',
     `requestHeader` text null comment '请求头',
     `responseHeader` text null comment '响应头',
     `userId` varchar(256) not null comment '创建人',
