@@ -2,12 +2,14 @@ package com.king.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.gson.Gson;
 import com.king.kingapiclientsdk.client.KingApiClient;
 import com.king.project.annotation.AuthCheck;
 import com.king.project.common.*;
 import com.king.project.constant.CommonConstant;
 import com.king.project.exception.BusinessException;
 import com.king.project.model.dto.interfaceinfo.InterfaceInfoAddRequest;
+import com.king.project.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.king.project.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.king.project.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
 import com.king.project.model.entity.InterfaceInfo;
@@ -236,7 +238,7 @@ public class InterfaceInfoController {
     }
 
     /**
-     * 下限
+     * 下线
      *
      * @param idRequest
      * @param request
@@ -261,5 +263,40 @@ public class InterfaceInfoController {
         interfaceInfo.setStatus(InterfaceInfoStatusEnum.OFFLINE.getValue());
         boolean result = interfaceInfoService.updateById(interfaceInfo);
         return ResultUtils.success(result);
+    }
+
+    /**
+     * 测试调用
+     *
+     * @param
+     * @param request
+     * @return
+     */
+    @PostMapping("/invoke")
+    @AuthCheck(mustRole = "admin")
+    public BaseResponse<Object> offlineupdateInterfaceInfo(@RequestBody InterfaceInfoInvokeRequest interfaceInfoInvokeRequest,
+                                                            HttpServletRequest request) {
+        if (interfaceInfoInvokeRequest == null || interfaceInfoInvokeRequest.getId() <= 0){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = interfaceInfoInvokeRequest.getId();
+        String userRequestParams = interfaceInfoInvokeRequest.getUserRequestParams();
+        //判断接口是否存在
+        InterfaceInfo oldInterfaceInfo = interfaceInfoService.getById(id);
+        if (oldInterfaceInfo == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        if (oldInterfaceInfo.getStatus() == InterfaceInfoStatusEnum.OFFLINE.getValue()){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "接口已关闭");
+        }
+        User loginUser = userService.getLoginUser(request);
+        String accessKey = loginUser.getAccessKey();
+        String secretKey = loginUser.getSecretKey();
+        KingApiClient tempClient = new KingApiClient(accessKey, secretKey);
+        Gson gson = new Gson();
+        com.king.kingapiclientsdk.model.User user = gson.fromJson(userRequestParams, com.king.kingapiclientsdk.model.User.class);
+        String usernameByPost = tempClient.getUsernameByPost(user);
+
+        return ResultUtils.success(usernameByPost);
     }
 }

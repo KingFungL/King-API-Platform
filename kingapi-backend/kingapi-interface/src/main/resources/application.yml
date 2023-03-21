@@ -6,3 +6,4 @@ kingapi:
   client:
     access-key: "king"
     secret-key: "abcdefgh"
+
