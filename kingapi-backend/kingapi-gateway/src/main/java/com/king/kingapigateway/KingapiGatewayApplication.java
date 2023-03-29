@@ -13,14 +13,14 @@ public class KingapiGatewayApplication {
         SpringApplication.run(KingapiGatewayApplication.class, args);
     }
 
-    @Bean
-    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-        return builder.routes()
-                .route("tobaidu", r -> r.path("/baidu")
-                        .uri("http://www.baidu.com"))
-                .route("toyupiicu", r -> r.host("/yupiicu")
-                        .uri("http://www.yupi.icu"))
-                .build();
-    }
+//    @Bean
+//    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+//        return builder.routes()
+//                .route("tobaidu", r -> r.path("/baidu")
+//                        .uri("http://www.baidu.com"))
+//                .route("toyupiicu", r -> r.path("/yupiicu")
+//                        .uri("https://yupi.icu"))
+//                .build();
+//    }
 
 }

@@ -1,0 +1,35 @@
+server:
+  port: 8090
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - AddResponseHeader=source, king
+      routes:
+        - id: api_route
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+#        - id: add_request_header_route
+#          uri: http://localhost:8123
+#          predicates:
+#            - Path=/api/**
+#          filters:
+#            - AddRequestHeader=king, swag
+#            - AddRequestParameter=name, dog
+#            - name: CircuitBreaker
+#              args:
+#                name: myCircuitBreaker
+#                fallbackUri: forward:/fallback
+#        - id: king-fallback
+#          uri: http://yupi.icu
+#          predicates:
+#          - Path=/fallback
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
