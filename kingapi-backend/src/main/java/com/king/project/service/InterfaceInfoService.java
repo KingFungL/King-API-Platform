@@ -1,7 +1,7 @@
 package com.king.project.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.king.project.model.entity.InterfaceInfo;
+import com.king.kingapicommon.model.entity.InterfaceInfo;
 
 /**
  *

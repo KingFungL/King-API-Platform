@@ -1,7 +1,7 @@
-package model.vo;
+package com.king.kingapicommon.model.vo;
+import com.king.kingapicommon.model.entity.Post;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import model.entity.Post;
 
 /**
  * 帖子视图

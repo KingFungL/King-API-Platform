@@ -1,4 +1,5 @@
-package com.king.project.model.entity;
+package com.king.kingapicommon.model.entity;
+
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

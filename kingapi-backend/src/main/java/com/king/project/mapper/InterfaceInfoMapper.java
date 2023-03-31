@@ -1,7 +1,8 @@
 package com.king.project.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.king.project.model.entity.InterfaceInfo;
+import com.king.kingapicommon.model.entity.InterfaceInfo;
+
 
 /**
  * @Entity com.king.project.model.entity.InterfaceInfo

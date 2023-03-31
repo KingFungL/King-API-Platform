@@ -1,4 +1,4 @@
-package model.enums;
+package com.king.kingapicommon.model.enums;
 
 import java.util.Arrays;
 import java.util.List;

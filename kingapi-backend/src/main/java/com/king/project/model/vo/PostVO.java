@@ -1,6 +1,6 @@
 package com.king.project.model.vo;
 
-import com.king.project.model.entity.Post;
+import com.king.kingapicommon.model.entity.Post;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

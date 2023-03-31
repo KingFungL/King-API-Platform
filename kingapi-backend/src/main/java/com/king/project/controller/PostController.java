@@ -2,6 +2,8 @@ package com.king.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.king.kingapicommon.model.entity.Post;
+import com.king.kingapicommon.model.entity.User;
 import com.king.project.annotation.AuthCheck;
 import com.king.project.common.BaseResponse;
 import com.king.project.common.DeleteRequest;
@@ -12,8 +14,6 @@ import com.king.project.exception.BusinessException;
 import com.king.project.model.dto.post.PostAddRequest;
 import com.king.project.model.dto.post.PostQueryRequest;
 import com.king.project.model.dto.post.PostUpdateRequest;
-import com.king.project.model.entity.Post;
-import com.king.project.model.entity.User;
 import com.king.project.service.PostService;
 import com.king.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;

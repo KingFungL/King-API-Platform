@@ -1,10 +1,10 @@
 package com.king.project.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.king.kingapicommon.model.entity.InterfaceInfo;
 import com.king.project.exception.BusinessException;
 import com.king.project.common.ErrorCode;
 import com.king.project.mapper.InterfaceInfoMapper;
-import com.king.project.model.entity.InterfaceInfo;
 import com.king.project.service.InterfaceInfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

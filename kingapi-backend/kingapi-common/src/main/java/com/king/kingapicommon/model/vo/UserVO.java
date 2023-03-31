@@ -1,4 +1,4 @@
-package model.vo;
+package com.king.kingapicommon.model.vo;
 
 
 import lombok.Data;

@@ -1,13 +1,15 @@
 package com.king.project.service.impl;
 
+
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.king.kingapicommon.model.entity.Post;
 import com.king.project.exception.BusinessException;
 import com.king.project.model.enums.PostGenderEnum;
 import com.king.project.model.enums.PostReviewStatusEnum;
 import com.king.project.service.PostService;
 import com.king.project.common.ErrorCode;
 import com.king.project.mapper.PostMapper;
-import com.king.project.model.entity.Post;
+
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

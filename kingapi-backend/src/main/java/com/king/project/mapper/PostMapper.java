@@ -1,7 +1,8 @@
 package com.king.project.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.king.project.model.entity.Post;
+import com.king.kingapicommon.model.entity.Post;
+
 
 /**
 * @author king

@@ -2,6 +2,8 @@ package com.king.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.king.kingapicommon.model.entity.User;
+import com.king.kingapicommon.model.entity.UserInterfaceInfo;
 import com.king.project.annotation.AuthCheck;
 import com.king.project.common.*;
 import com.king.project.constant.CommonConstant;
@@ -10,8 +12,6 @@ import com.king.project.exception.BusinessException;
 import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
 import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
 import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
-import com.king.project.model.entity.UserInterfaceInfo;
-import com.king.project.model.entity.User;
 import com.king.project.service.UserInterfaceInfoService;
 import com.king.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
