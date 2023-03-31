@@ -6,17 +6,18 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.king.kingapiclientsdk.model.User;
+import com.king.kingapiclientsdk.utils.SignUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.king.kingapiclientsdk.utils.SignUtils.genSign;
 
 /**
  * @author King
  * @Description:调用第三方接口的客户端
  */
 public class KingApiClient {
+
+    private static final String GATEWAY_HOST = "http://localhost:8090";
 
     private String accessKey;
 
@@ -31,7 +32,7 @@ public class KingApiClient {
         //可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result = HttpUtil.get("http://localhost:8123/api/name/", paramMap);
+        String result = HttpUtil.get(GATEWAY_HOST + "/api/name/", paramMap);
         System.out.println(result);
         return result;
     }
@@ -40,7 +41,7 @@ public class KingApiClient {
         //可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result = HttpUtil.post("http://localhost:8123/api/name/", paramMap);
+        String result = HttpUtil.post(GATEWAY_HOST + "/api/name/", paramMap);
         System.out.println(result);
         return result;
     }
@@ -53,13 +54,13 @@ public class KingApiClient {
         hashMap.put("nonce", RandomUtil.randomNumbers(4));
         hashMap.put("body", body);
         hashMap.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-        hashMap.put("sign", genSign(body, secretKey));
+        hashMap.put("sign", SignUtils.genSign(body, secretKey));
         return hashMap;
     }
 
     public String getUsernameByPost(User user) {
         String json = JSONUtil.toJsonStr(user);
-        HttpResponse httpResponse = HttpRequest.post("http://localhost:8123/api/name/user")
+        HttpResponse httpResponse = HttpRequest.post(GATEWAY_HOST + "/api/name/user")
                 .addHeaders(getHeaderMap(json))
                 .body(json)
                 .execute();

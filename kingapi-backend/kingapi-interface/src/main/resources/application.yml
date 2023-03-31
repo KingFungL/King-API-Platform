@@ -4,6 +4,5 @@ server:
     context-path: /api
 kingapi:
   client:
-    access-key: "king"
-    secret-key: "abcdefgh"
-
+    access-key: king
+    secret-key: abcdefgh
