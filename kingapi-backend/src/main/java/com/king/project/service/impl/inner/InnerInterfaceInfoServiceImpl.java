@@ -8,6 +8,7 @@ import com.king.project.exception.BusinessException;
 import com.king.project.mapper.InterfaceInfoMapper;
 import com.king.project.service.UserInterfaceInfoService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
 
@@ -15,6 +16,8 @@ import javax.annotation.Resource;
  * @author King
  * @Description:
  */
+
+@DubboService
 public class InnerInterfaceInfoServiceImpl implements InnerInterfaceInfoService {
 
     @Resource

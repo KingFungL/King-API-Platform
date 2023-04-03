@@ -13,7 +13,7 @@ spring:
   # session 失效时间（分钟）
   session:
     timeout: 86400
-#    store-type: redis
+    #store-type: redis
   # redis 配置
   redis:
     port: 6379
@@ -34,17 +34,17 @@ mybatis-plus:
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
 kingapi:
   client:
-    access-key: king
-    secret-key: abcdefgh
-#dubbo:
-#  application:
-#    name: dubbo-springboot-demo-provider
-#  protocol:
-#    name: dubbo
-#    port: -1
-#  registry:
-#    id: nacos-registry
-#    address: nacos://localhost:8848
+    access-key: fc63e4dbf4fd16dafe1ae6016055e10d
+    secret-key: 9660eec3e3f6d835a807c5f1e04a0b36
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
 #  application:
 #    name: dubbo-springboot-demo-provider
 #  protocol:

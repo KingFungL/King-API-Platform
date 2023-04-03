@@ -27,11 +27,11 @@ public class NameController {
 
     @PostMapping("/user")
     public String getUsernameByPost(@RequestBody User user, HttpServletRequest request){
-        String accessKey = request.getHeader("accessKey");
-        String nonce = request.getHeader("nonce");
-        String timestamp = request.getHeader("timestamp");
-        String sign = request.getHeader("sign");
-        String body = request.getHeader("body");
+//        String accessKey = request.getHeader("accessKey");
+//        String nonce = request.getHeader("nonce");
+//        String timestamp = request.getHeader("timestamp");
+//        String sign = request.getHeader("sign");
+//        String body = request.getHeader("body");
 //        com.king.kingapiinterface.model.dao.entity.User loginUser = userService.getLoginUser(request);
 //        String accessKeyAck = loginUser.getAccessKey();
 //        String secretKeyAck = loginUser.getSecretKey();
@@ -39,9 +39,9 @@ public class NameController {
 //        if (!accessKey.equals(accessKeyAck)){
 //            throw new RuntimeException("无权限");
 //        }
-        if (Long.parseLong(nonce) > 10000){
-            throw new RuntimeException("无权限");
-        }
+//        if (Long.parseLong(nonce) > 10000){
+//            throw new RuntimeException("无权限");
+//        }
         //todo 时间和当前时间不能超过5分钟
 //        if (timestamp)
         //todo 实际需要到数据库中查出secretKey
