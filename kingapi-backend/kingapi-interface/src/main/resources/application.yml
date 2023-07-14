@@ -2,7 +2,7 @@ server:
   port: 8123
   servlet:
     context-path: /api
-kingapi:
-  client:
-    access-key: fc63e4dbf4fd16dafe1ae6016055e10d
-    secret-key: 9660eec3e3f6d835a807c5f1e04a0b36
+#kingapi:
+#  client:
+#    access-key: fc63e4dbf4fd16dafe1ae6016055e10d
+#    secret-key: 9660eec3e3f6d835a807c5f1e04a0b36

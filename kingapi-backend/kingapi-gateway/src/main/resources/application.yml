@@ -8,9 +8,11 @@ spring:
         - AddResponseHeader=source, king
       routes:
         - id: api_route
-          uri: http://localhost:8123
+          uri: http://175.178.15.235:8123
           predicates:
             - Path=/api/**
+#  redis:
+#
 #        - id: add_request_header_route
 #          uri: http://localhost:8123
 #          predicates:
@@ -42,4 +44,4 @@ dubbo:
     port: -1
   registry:
     id: nacos-registry
-    address: nacos://localhost:8848
+    address: nacos://175.178.15.235:8848

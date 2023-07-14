@@ -4,8 +4,9 @@ spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/kingapi
-    username: root
+#    url: jdbc:mysql://localhost:3306/kingapi
+    url: jdbc:mysql://175.178.15.235:3306/kingapi
+    username: kingapi
     password: 123456789
   mvc:
     pathmatch:
@@ -17,7 +18,7 @@ spring:
   # redis 配置
   redis:
     port: 6379
-    host: localhost
+    host: 175.178.15.235
     database: 0
 server:
   port: 7529
@@ -44,7 +45,8 @@ dubbo:
     port: -1
   registry:
     id: nacos-registry
-    address: nacos://localhost:8848
+#    address: nacos://localhost:8848
+    address: nacos://175.178.15.235:8848
 #  application:
 #    name: dubbo-springboot-demo-provider
 #  protocol:
