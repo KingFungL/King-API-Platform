@@ -45,8 +45,8 @@ dubbo:
     port: -1
   registry:
     id: nacos-registry
-#    address: nacos://localhost:8848
-    address: nacos://175.178.15.235:8848
+    address: nacos://localhost:8848
+#    address: nacos://175.178.15.235:8848
 #  application:
 #    name: dubbo-springboot-demo-provider
 #  protocol:

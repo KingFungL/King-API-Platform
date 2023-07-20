@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e556867a-c30d-4b0d-a644-774ffef0c176" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/kingapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/src/main/java/com/king/kingapigateway/DemoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/provider/DemoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/provider/DemoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/provider/EmbeddedZooKeeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_dropwizard_metrics_metrics_core_4_1_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_tcnative_2_0_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_tcnative_classes_2_0_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_2_14_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_yetus_audience_annotations_0_12_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_jute_3_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_client_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_ajax_9_4_43_v20210629.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/embedded-zookeeper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/src/main/java/org/apache/dubbo/samples/EmbeddedZooKeeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/.plxarc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/classes/META-INF/DEPENDENCIES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/classes/META-INF/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/classes/META-INF/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/classes/org/apache/dubbo/samples/EmbeddedZooKeeper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/maven-shared-archive-resources/META-INF/DEPENDENCIES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/maven-shared-archive-resources/META-INF/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedded-zookeeper/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-client-sdk/src/main/java/com/king/kingapiclientsdk/client/KingApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-client-sdk/src/main/java/com/king/kingapiclientsdk/client/KingApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/src/main/java/com/king/kingapigateway/KingapiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/src/main/java/com/king/kingapigateway/KingapiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-interface/src/main/java/com/king/kingapiinterface/controller/NameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-interface/src/main/java/com/king/kingapiinterface/controller/NameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/kingapi-interface/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/kingapi-interface/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/java/com/king/project/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingapi-backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-client-sdk/src/main/java/com/king/kingapiclientsdk/client/KingApiClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-client-sdk/src/main/java/com/king/kingapiclientsdk/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-client-sdk/src/main/java/com/king/kingapiclientsdk/utils/SignUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-client-sdk/src/main/resources/META-INF/spring.factories" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/src/main/java/com/king/kingapiinterface/KingapiInterfaceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingapi-interface/src/test/java/com/king/kingapiinterface/KingapiInterfaceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2NlW57YlTAHvWc9XGW0vMXHioop" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e556867a-c30d-4b0d-a644-774ffef0c176" name="Default Changelist" comment="" />
+      <created>1680238963507</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680238963507</updated>
+      <workItem from="1680238965314" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

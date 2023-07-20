@@ -3,16 +3,17 @@ package com.king.project.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageDTO;
+import com.king.kingapicommon.common.BaseResponse;
+import com.king.kingapicommon.common.DeleteRequest;
+import com.king.kingapicommon.common.ErrorCode;
+import com.king.kingapicommon.common.ResultUtils;
+import com.king.kingapicommon.model.dto.user.*;
 import com.king.kingapicommon.model.entity.User;
+import com.king.kingapicommon.model.vo.UserVO;
 import com.king.project.exception.BusinessException;
-import com.king.project.model.dto.user.*;
-import com.king.project.model.vo.UserVO;
-import com.king.project.common.BaseResponse;
-import com.king.project.common.DeleteRequest;
-import com.king.project.common.ErrorCode;
-import com.king.project.common.ResultUtils;
 
 import com.king.project.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Resource
@@ -235,6 +237,8 @@ public class UserController {
         userVOPage.setRecords(userVOList);
         return ResultUtils.success(userVOPage);
     }
+
+
 
     // endregion
 }

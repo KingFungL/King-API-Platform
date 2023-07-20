@@ -1,6 +1,6 @@
 package com.king.project.exception;
 
-import com.king.project.common.ErrorCode;
+import com.king.kingapicommon.common.ErrorCode;
 
 /**
  * 自定义异常类

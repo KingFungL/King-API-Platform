@@ -2,16 +2,19 @@ package com.king.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.king.kingapicommon.common.BaseResponse;
+import com.king.kingapicommon.common.DeleteRequest;
+import com.king.kingapicommon.common.ErrorCode;
+import com.king.kingapicommon.common.ResultUtils;
+import com.king.kingapicommon.constant.CommonConstant;
+import com.king.kingapicommon.constant.UserConstant;
+import com.king.kingapicommon.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
+import com.king.kingapicommon.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
+import com.king.kingapicommon.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
 import com.king.kingapicommon.model.entity.User;
 import com.king.kingapicommon.model.entity.UserInterfaceInfo;
 import com.king.project.annotation.AuthCheck;
-import com.king.project.common.*;
-import com.king.project.constant.CommonConstant;
-import com.king.project.constant.UserConstant;
 import com.king.project.exception.BusinessException;
-import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
-import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
-import com.king.project.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
 import com.king.project.service.UserInterfaceInfoService;
 import com.king.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -56,6 +59,7 @@ public class UserInterfaceInfoController {
         }
         UserInterfaceInfo userInterfaceInfo = new UserInterfaceInfo();
         BeanUtils.copyProperties(userInterfaceInfoAddRequest, userInterfaceInfo);
+
         // 校验
         userInterfaceInfoService.validUserInterfaceInfo(userInterfaceInfo, true);
         User loginUser = userService.getLoginUser(request);
@@ -135,13 +139,16 @@ public class UserInterfaceInfoController {
      * @param id
      * @return
      */
-    @GetMapping("/get")
+    @GetMapping("/get/vo")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<UserInterfaceInfo> getUserInterfaceInfoById(long id) {
         if (id <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         UserInterfaceInfo userInterfaceInfo = userInterfaceInfoService.getById(id);
+        if (userInterfaceInfo == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
         return ResultUtils.success(userInterfaceInfo);
     }
 
@@ -170,7 +177,7 @@ public class UserInterfaceInfoController {
      * @param request
      * @return
      */
-    @GetMapping("/list/page")
+    @GetMapping("/list/page/vo")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Page<UserInterfaceInfo>> listUserInterfaceInfoByPage(UserInterfaceInfoQueryRequest userInterfaceInfoQueryRequest, HttpServletRequest request) {
         if (userInterfaceInfoQueryRequest == null) {

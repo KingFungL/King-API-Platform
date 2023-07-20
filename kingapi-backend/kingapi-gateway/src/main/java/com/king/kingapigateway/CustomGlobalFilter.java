@@ -47,7 +47,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
     @DubboReference
     private InnerUserInterfaceInfoService innerUserInterfaceInfoService;
 
-    private static final List<String> IP_WHITE_LIST = Arrays.asList("127.0.0.1");
+//    private static final List<String> IP_WHITE_LIST = Arrays.asList("127.0.0.1");
 
     private static final String INTERFACE_HOST = "http://localhost:8123";
 
@@ -66,11 +66,11 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         log.info("请求来源地址：" + request.getRemoteAddress());
         ServerHttpResponse response = exchange.getResponse();
 
-        //2. 访问控制 -（黑白名单）
-        if (!IP_WHITE_LIST.contains(sourceAddress)){
-            response.setStatusCode(HttpStatus.FORBIDDEN);
-            return response.setComplete();
-        }
+//        //2. 访问控制 -（黑白名单）
+//        if (!IP_WHITE_LIST.contains(sourceAddress)){
+//            response.setStatusCode(HttpStatus.FORBIDDEN);
+//            return response.setComplete();
+//        }
 
         //3. 用户鉴权（判断 accessKey, secretKey 是否合法）
         HttpHeaders headers = request.getHeaders();
@@ -89,6 +89,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         } catch (Exception e) {
             log.error("getInvokeUser error", e);
         }
+
         if (invokeUser == null){
             return handleNoAuth(response);
         }
@@ -101,6 +102,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         if ((currentTime - Long.parseLong(timestamp)) >= FIVE_MINUTES) {
             return handleNoAuth(response);
         }
+
         // 实际情况中是从数据库中查出 secretKey
         String secretKey = invokeUser.getSecretKey();
         String serverSign = SignUtils.genSign(body, secretKey);
@@ -112,6 +114,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         // 从数据库中查询模拟接口是否存在，以及请求方法是否匹配（还可以校验请求参数）
         InterfaceInfo interfaceInfo = null;
         try {
+            //调用dubbo中的公共方法，查询接口是否存在
             interfaceInfo = innerInterfaceInfoService.getInterfaceInfo(path, method);
         } catch (Exception e) {
             log.error("getInterfaceInfo error", e);
@@ -125,7 +128,16 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         // todo 网关判断是否还有调用次数
 
         // 6. 响应日志
+        //查询接口id和用户id
+        Long interfaceInfoId = interfaceInfo.getId();
+        Long invokeUserId = invokeUser.getId();
+        // 是否还有调用次数
+        boolean hasLeftNum = innerUserInterfaceInfoService.invokeLeftNum(interfaceInfoId, invokeUserId);
 
+        //没有次数抛出依次
+        if (!hasLeftNum){
+            return handleNoAuth(response);
+        }
 
         return handleResponse(exchange, chain, interfaceInfo.getId(), invokeUser.getId());
 //        if (response.getStatusCode() != HttpStatus.OK){

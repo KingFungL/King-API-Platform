@@ -1,5 +1,6 @@
 package com.king.kingapicommon.model.enums;
 
+import org.apache.commons.lang3.ObjectUtils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,6 +21,24 @@ public enum InterfaceInfoStatusEnum {
     InterfaceInfoStatusEnum(String text, int value) {
         this.text = text;
         this.value = value;
+    }
+
+    /**
+     * 根据 value 获取枚举
+     *
+     * @param value
+     * @return
+     */
+    public static InterfaceInfoStatusEnum getEnumByValue(int value) {
+        if (ObjectUtils.isEmpty(value)) {
+            return null;
+        }
+        for (InterfaceInfoStatusEnum anEnum : InterfaceInfoStatusEnum.values()) {
+            if (anEnum.value == value) {
+                return anEnum;
+            }
+        }
+        return null;
     }
 
     /**

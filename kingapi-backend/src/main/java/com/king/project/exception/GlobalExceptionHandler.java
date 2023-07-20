@@ -1,8 +1,8 @@
 package com.king.project.exception;
 
-import com.king.project.common.BaseResponse;
-import com.king.project.common.ErrorCode;
-import com.king.project.common.ResultUtils;
+import com.king.kingapicommon.common.BaseResponse;
+import com.king.kingapicommon.common.ErrorCode;
+import com.king.kingapicommon.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

@@ -1,12 +1,11 @@
 package com.king.project.service.impl.inner;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.king.kingapicommon.common.ErrorCode;
 import com.king.kingapicommon.model.entity.InterfaceInfo;
 import com.king.kingapicommon.service.InnerInterfaceInfoService;
-import com.king.project.common.ErrorCode;
 import com.king.project.exception.BusinessException;
 import com.king.project.mapper.InterfaceInfoMapper;
-import com.king.project.service.UserInterfaceInfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.DubboService;
 

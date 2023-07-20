@@ -1,6 +1,5 @@
 package com.king.kingapigateway;
 
-
 import com.king.project.provider.DemoService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
@@ -30,7 +29,6 @@ public class KingapiGatewayApplication {
         String result2 = application.doSayHello2("world");
         System.out.println("result: " + result);
         System.out.println("result: " + result2);
-
     }
 
     public String doSayHello(String name) {
