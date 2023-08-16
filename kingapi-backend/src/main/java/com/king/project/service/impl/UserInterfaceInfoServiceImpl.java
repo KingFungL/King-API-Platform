@@ -1,6 +1,7 @@
 package com.king.project.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.king.kingapicommon.common.ErrorCode;
@@ -8,8 +9,10 @@ import com.king.kingapicommon.model.entity.UserInterfaceInfo;
 import com.king.project.exception.BusinessException;
 import com.king.project.mapper.UserInterfaceInfoMapper;
 import com.king.project.service.UserInterfaceInfoService;
+import com.king.project.service.UserService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,6 +23,9 @@ import java.util.List;
 @Service
 public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoMapper, UserInterfaceInfo>
         implements UserInterfaceInfoService {
+
+    @Resource
+    private UserService userService;
 
     @Override
     public void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add) {
@@ -50,10 +56,19 @@ public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoM
 
     @Override
     public boolean invokeCount(long interfaceInfoId, long userId) {
-        // 判断
+        // 判断请求参数是否存在用户和接口
         if (interfaceInfoId <= 0 || userId <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
+        // 查询接口是否存在
+        UserInterfaceInfo userInterfaceInfo = this.lambdaQuery()
+                .eq(UserInterfaceInfo::getInterfaceInfoId, interfaceInfoId)
+                .eq(UserInterfaceInfo::getUserId, userId)
+                .one();
+        if (userInterfaceInfo == null) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "接口不存在");
+        }
+
         UpdateWrapper<UserInterfaceInfo> updateWrapper = new UpdateWrapper<>();
         updateWrapper.eq("interfaceInfoId", interfaceInfoId);
         updateWrapper.eq("userId", userId);

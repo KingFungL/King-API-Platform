@@ -1,7 +1,7 @@
 server:
   port: 8123
   servlet:
-    context-path: /api
+  context-path: /api/interface/
 #kingapi:
 #  client:
 #    access-key: fc63e4dbf4fd16dafe1ae6016055e10d

@@ -1,6 +1,7 @@
 package com.king.kingapigateway;
 
 import com.king.kingapiclientsdk.utils.SignUtils;
+import com.king.kingapicommon.common.ErrorCode;
 import com.king.kingapicommon.model.entity.InterfaceInfo;
 import com.king.kingapicommon.model.entity.User;
 import com.king.kingapicommon.service.InnerInterfaceInfoService;
@@ -83,6 +84,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
 //            return handleNoAuth(response);
 //        }
         //去数据库中查是否已分配给用户
+
         User invokeUser = null;
         try {
             invokeUser = innerUserService.getInvokeUser(accessKey);
@@ -131,10 +133,8 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         //查询接口id和用户id
         Long interfaceInfoId = interfaceInfo.getId();
         Long invokeUserId = invokeUser.getId();
-        // 是否还有调用次数
+        // 是否还有调用次数 //没有次数抛出异常（已在下层方法实现）
         boolean hasLeftNum = innerUserInterfaceInfoService.invokeLeftNum(interfaceInfoId, invokeUserId);
-
-        //没有次数抛出依次
         if (!hasLeftNum){
             return handleNoAuth(response);
         }
@@ -209,7 +209,8 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
                 // 设置 response 对象为装饰过的
                 return chain.filter(exchange.mutate().response(decoratedResponse).build());
             }
-            return chain.filter(exchange); // 降级处理返回数据
+            // 降级处理返回数据
+            return chain.filter(exchange);
         } catch (Exception e) {
             log.error("网关处理响应异常" + e);
             return chain.filter(exchange);

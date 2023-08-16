@@ -7,6 +7,7 @@ import com.king.project.exception.BusinessException;
 import com.king.project.service.UserInterfaceInfoService;
 import com.king.project.service.UserService;
 import org.apache.dubbo.config.annotation.DubboService;
+import sun.jvm.hotspot.runtime.BasicObjectLock;
 
 
 import javax.annotation.Resource;
@@ -32,7 +33,14 @@ public class InnerUserInterfaceInfoServiceImpl implements InnerUserInterfaceInfo
 
     @Override
     public boolean invokeLeftNum(long interfaceInfoId, long userId) {
-        return false;
+        UserInterfaceInfo userInterfaceInfo = userInterfaceInfoService.lambdaQuery()
+                .eq(UserInterfaceInfo::getInterfaceInfoId, interfaceInfoId)
+                .eq(UserInterfaceInfo::getUserId, userId)
+                .one();
+        if (userInterfaceInfo != null && userInterfaceInfo.getLeftNum() <= 0){
+            throw new BusinessException(ErrorCode.OPERATION_ERROR, "调用次数已用完！");
+        }
+        return true;
     }
 
     @Override
