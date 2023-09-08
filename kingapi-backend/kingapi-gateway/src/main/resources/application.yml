@@ -1,5 +1,12 @@
 server:
   port: 8090
+  servlet:
+    # cookie 30 天过期
+    session:
+      cookie:
+        max-age: 2592000
+        #cookie作用域
+  #        domain: #
 
 spring:
   cloud:

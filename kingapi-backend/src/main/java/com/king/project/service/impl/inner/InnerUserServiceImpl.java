@@ -6,6 +6,8 @@ import com.king.kingapicommon.model.entity.User;
 import com.king.kingapicommon.service.InnerUserService;
 import com.king.project.exception.BusinessException;
 import com.king.project.mapper.UserMapper;
+import com.king.project.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.DubboService;
 
@@ -17,6 +19,7 @@ import javax.annotation.Resource;
  */
 
 @DubboService
+@Slf4j
 public class InnerUserServiceImpl implements InnerUserService {
 
     @Resource
@@ -24,9 +27,6 @@ public class InnerUserServiceImpl implements InnerUserService {
 
     @Override
     public User getInvokeUser(String accessKey) {
-        if (StringUtils.isAnyBlank(accessKey)){
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("accessKey", accessKey);
         return userMapper.selectOne(queryWrapper);
