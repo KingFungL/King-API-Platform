@@ -5,7 +5,7 @@ API开放式平台:一个丰富的API开放调用平台，为开发者提供便�
 在线体验地址：[Open-API](http://175.178.15.235/)
 
 #### 系统架构
-![系统架构图](https://github.com/KingFungL/King-API-Platform/image/API系统架构图.png)
+![系统架构图](https://github.com/KingFungL/King-API-Platform/blob/version-06/image/API%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 
 #### 技术实现
